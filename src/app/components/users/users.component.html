@@ -1,5 +1,9 @@
 <h2>Users</h2>
-<button [disabled]="!enableAdd" class="btn btn-light btn-block mb-3">Add new user</button>
+<button 
+  [disabled]="!enableAdd" 
+  class="btn btn-block mb-3"
+  [ngClass]="currentClasses"
+>Add new user</button>
 <ul class="list-unstyled" *ngIf="users.length >0;else noUsers">
   <li *ngFor="let user of users" class="card card-body mb-2" [class.bg-dark]="user.isActive">
     <div class="row">
