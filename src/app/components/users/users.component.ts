@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class UsersComponent implements OnInit {
   users: User[];
   enableAdd: boolean = false;
+  
 
 
   constructor() { }
@@ -25,7 +26,8 @@ export class UsersComponent implements OnInit {
           state: 'MA'
         },
         isActive: false,
-        registered: new Date('03/11/2017 08:30:00')
+        registered: new Date('03/11/2017 08:30:00'),
+        showExtended: false
       },
       {
         firstName: 'Shahin',
@@ -37,7 +39,8 @@ export class UsersComponent implements OnInit {
           state: 'Sweden'
         },
         isActive:true,
-        registered: new Date('03/11/2018 09:30:00')
+        registered: new Date('03/11/2018 09:30:00'),
+        showExtended: false
       },
       {
         firstName: 'Kona',
@@ -49,10 +52,9 @@ export class UsersComponent implements OnInit {
           state: 'Sweden'
         },
         isActive: true,
-        registered: new Date('03/09/2017 11:30:00')
+        registered: new Date('03/09/2017 11:30:00'),
+        showExtended: false
       }
     ]
   }
-  
-
 }
