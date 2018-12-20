@@ -25,7 +25,9 @@ export class UsersComponent implements OnInit {
           state: 'MA'
         },
         image:'http://lorempixel.com/600/600/people/3',
-        isActive: false
+        isActive: false,
+        balance: 0,
+        registered: new Date('03/11/2017 08:30:00')
       },
       {
         firstName: 'Shahin',
@@ -36,7 +38,9 @@ export class UsersComponent implements OnInit {
           city : 'Stockholm',
           state: 'Sweden'
         },
-        isActive:true
+        isActive:true,
+        balance: 100,
+        registered: new Date('03/11/2018 09:30:00')
       },
       {
         firstName: 'Kona',
@@ -48,7 +52,9 @@ export class UsersComponent implements OnInit {
           state: 'Sweden'
         },
         image:'http://lorempixel.com/600/600/people/1',
-        isActive: true
+        isActive: true,
+        balance: 500,
+        registered: new Date('03/09/2017 11:30:00')
       }
     ]
   }
