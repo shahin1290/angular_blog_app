@@ -7,8 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
+  user: User = {
+    firstName: '',
+    lastName: '',
+    age: null,
+    address: {
+      street: '',
+      city: '',
+      state: ''
+    }
+  }
   users: User[];
   enableAdd: boolean = false;
+  showUserForm: boolean = true;
   
 
 
@@ -56,5 +67,11 @@ export class UsersComponent implements OnInit {
         showExtended: false
       }
     ]
+  }
+  addUser(){
+    this.users.unshift(this.user)
+    this.user.isActive = true
+    this.user.registered = new Date('03/11/2018 09:30:00'),
+    this.user.showExtended = false
   }
 }
