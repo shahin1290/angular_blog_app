@@ -2,15 +2,28 @@
 <button 
   [disabled]="!enableAdd" 
   class="btn btn-block mb-3"
-  [ngClass]="currentClasses"
+  [ngClass]="{
+    'btn-success': enableAdd,
+    'btn-danger': !enableAdd
+  }"
 >Add new user</button>
 <ul class="list-unstyled" *ngIf="users.length >0;else noUsers">
-  <li *ngFor="let user of users" class="card card-body mb-2" [class.bg-dark]="user.isActive">
+  <li 
+    *ngFor="let user of users" 
+    class="card card-body mb-2" 
+    [class.bg-secondary]="user.isActive"
+    [style.border-color] = "user.isActive ? 'green' : ''"
+  >
     <div class="row">
       <div class="col-sm-4">
           <img [src]="user.image" *ngIf="user.image" alt="pic" class="img-fluid">
       </div>
-      <div class="col-sm-8">
+      <div 
+        class="col-sm-8" 
+        [ngStyle]="{
+          'margin-left': !user.image ? '10px' : '0',
+          'text-decoration': !user.isActive ? 'line-through': ''}"
+      >
           <h3>{{ user.firstName}} {{ user.lastName }}</h3>
           <ul class="list-group">
             <li class="list-group-item">Age: {{ user.age }}</li>

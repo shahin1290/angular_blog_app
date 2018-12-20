@@ -9,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class UsersComponent implements OnInit {
   users: User[];
   enableAdd: boolean = false;
-  currentClasses = {}
+
+
   constructor() { }
 
   ngOnInit() {
@@ -50,13 +51,7 @@ export class UsersComponent implements OnInit {
         isActive: true
       }
     ]
-    this.setCurrentClasses()
   }
-  setCurrentClasses(){
-    this.currentClasses = {
-      'btn-success': this.enableAdd,
-      'btn-danger': !this.enableAdd
-    }
-  }
+  
 
 }
