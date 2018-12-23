@@ -8,6 +8,8 @@ import { CourseComponent } from './course/course.component';
 import { UserComponent } from './components/user/user.component';
 import { UsersComponent } from './components/users/users.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { PostsComponent } from './components/posts/posts.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     CourseComponent,
     UserComponent,
     UsersComponent,
-    NavbarComponent
+    NavbarComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

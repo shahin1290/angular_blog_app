@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
+
 import { User } from '../models/User';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class UserService {
   users: User[]
+  data: Observable<any>;
+
   constructor() { 
     this.users = [
       {
@@ -33,6 +37,25 @@ export class DataService {
         showExtended: false
       }
     ]
+  }
+  getData(){
+    this.data = new Observable(observer => {
+      setTimeout(()=>{
+        observer.next(1)
+      },1000)
+
+      setTimeout(()=>{
+        observer.next(2)
+      },2000)
+
+      setTimeout(()=>{
+        observer.next(1)
+      },3000)
+      
+    })
+
+    return this.data
+    
   }
   getUsers(): User[]{
     return this.users
