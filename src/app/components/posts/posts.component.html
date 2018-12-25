@@ -1,7 +1,8 @@
 <app-post-form 
   (newPost)="onNewPost($event)"
   [currentPost]="currentPost"
-  [isEdit]="isEdit">
+  [isEdit]="isEdit"
+  (updatedPost)="onUpdatedPost($event)">
 </app-post-form>
 
 <h2>Posts</h2>
